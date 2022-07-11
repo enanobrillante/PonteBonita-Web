@@ -113,7 +113,8 @@ h6 {
 
 .social-icon {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    text-align: center;
 }
 
 .social-icon [class*="icon-"] {
@@ -131,6 +132,7 @@ h6 {
 
 .social-icon-link {
     text-decoration: none;
+    margin-right: 10px !important;
 }
 
 .menu {
@@ -290,6 +292,10 @@ h6 {
     cursor: pointer;
 }
 
+.contact-info {
+    text-align: center;
+}
+
 
 /*--------- Estilos footer --------*/
 
@@ -381,6 +387,9 @@ h6 {
         height: 250px;
         object-fit: cover;
     }
+    .contact-info {
+        text-align: left;
+    }
     .main-footer {
         text-align: left;
     }
@@ -425,6 +434,9 @@ h6 {
     }
     .nuestros-productos__price {
         font-size: 1.8em;
+    }
+    .contact-info {
+        text-align: left;
     }
     .main-footer {
         padding: 30px 0;
@@ -484,6 +496,9 @@ h6 {
     .nuestros-productos__price {
         font-size: 1.8em;
     }
+    .contact-info {
+        text-align: left;
+    }
     .main-footer {
         padding: 30px 0;
     }
@@ -511,6 +526,9 @@ h6 {
     .nuestros-productos__img {
         height: 300px;
         object-fit: cover;
+    }
+    .contact-info {
+        text-align: left;
     }
     .main-footer .column--33 .colum__txt {
         font-size: 1.8em;
