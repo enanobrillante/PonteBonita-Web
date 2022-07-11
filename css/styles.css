@@ -1,0 +1,518 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+
+/*-------------- Estilos base----------------*/
+
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+
+/*container limita´rael contenido a lo ancho de la página*/
+
+.container {
+    width: 100%;
+    margin: auto;
+}
+
+.container-flex {
+    display: flex;
+    /*para que los elementos que no entren se desplazen hacia abajo*/
+    flex-wrap: wrap;
+    /*Alinear en el eje principal horizontyal*/
+    justify-content: space-between;
+    /*alinear en el eje vertical*/
+    align-items: center;
+}
+
+
+/*clase column para elementos en columna*/
+
+.column {
+    width: 100%;
+}
+
+
+/*--------------- Estilos Header ---------*/
+
+.main-header {
+    width: 100;
+}
+
+.logo {
+    font-size: 40px;
+    padding: 10px;
+    color: white;
+    background-color: black;
+    text-align: center;
+}
+
+.logo span {
+    text-transform: uppercase;
+}
+
+.main-header__contactInfo__phone {
+    background-color: rgba(0, 0, 0, 0.911);
+    color: aliceblue;
+    margin: 0 auto;
+    padding: 10px;
+    font-weight: 300;
+}
+
+.main-header__contactInfo__adress {
+    padding: 10px;
+    margin: 0;
+}
+
+.main-header [class*="icon-"]:before {
+    position: relative;
+    top: 2px;
+    right: 5px;
+}
+
+
+/*Estilos del menu*/
+
+.main-nav {
+    width: 100%;
+    position: relative;
+    z-index: 2000;
+    padding: 10px;
+}
+
+.icon-menu {
+    display: block;
+    color: white;
+    border: 1px solid white;
+    border-radius: 3px;
+    width: 40px;
+    height: 40px;
+    line-height: 45px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.8em;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: space-between;
+}
+
+.social-icon [class*="icon-"] {
+    color: black;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3em;
+    width: 35px;
+    height: 35px;
+    background: white;
+    border-radius: 50%;
+}
+
+.social-icon-link {
+    text-decoration: none;
+}
+
+.menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    /*para centrar los textos*/
+    text-align: center;
+    /*no desaparecemos el menu con display:none por que este no se pude animar*/
+    /*lo ocultamos asi*/
+    height: 0;
+    overflow: hidden;
+    /*transition aplicada al height*/
+    transition: height .2s linear;
+}
+
+
+/* a los enlaces*/
+
+.menu__link {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.menu__link:hover {
+    background-color: #DE423A;
+}
+
+
+/*el select nos indica la página activa*/
+
+.menu__link--select {
+    background-color: #DE423A;
+}
+
+.mostrar {
+    /*si le ponemos height auto  , no se animará*/
+    height: 196px;
+}
+
+
+/*Estilos de banner*/
+
+.banner {
+    /*para que el baner llegue hasta el menu*/
+    margin-top: -58px;
+    position: relative;
+}
+
+.banner::before {
+    /*todo pseudo elemento debe llevar la propiedad content*/
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    top: 0;
+}
+
+.banner__img {
+    width: 100%;
+    /* height: 500px; */
+    /* object-fit: cover; */
+}
+
+.banner__content {
+    width: 80%;
+    color: aliceblue;
+    text-align: center;
+    /*paraque aparexca por delante del fondo oscuro*/
+    position: absolute;
+    z-index: 1500;
+    top: 50%;
+    left: 50%;
+    font-size: 2em;
+    /*para centrar el texto, con el width de 80% y position absolute*/
+    transform: translateX(-50%) translateY(-50%);
+    font-weight: 400;
+}
+
+
+/*--------- Estilos principales --------*/
+
+.group__color .container {
+    background: #DE423a;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.main-title {
+    margin: 15px 0;
+    font-size: 1.8em;
+}
+
+.column__title {
+    font-size: 1.4;
+}
+
+.main__about__description .column:nth-child(2) {
+    padding: 10px;
+}
+
+.btn {
+    text-transform: uppercase;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    width: 120px;
+    background-color: #DE423A;
+    padding: 10px;
+    /*con el margin lo centramos */
+    margin: 10px auto;
+    color: white;
+    font-weight: 700;
+}
+
+.group__title {
+    text-align: center;
+    font-weight: 100;
+    font-size: 1.8em;
+    margin: 30px;
+}
+
+.product-special .column {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.nuestros-productos__img {
+    margin: auto;
+    max-width: 300px;
+}
+
+.nuestros-productos__title {
+    font-size: 1.3em;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.nuestros-productos__price {
+    font-size: 1.5em;
+    color: #DE423A;
+    font-weight: bold;
+}
+
+.nuestros-productos__img:hover {
+    cursor: pointer;
+}
+
+
+/*--------- Estilos footer --------*/
+
+.main-footer {
+    background: #222;
+    color: white;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: .8em;
+    text-align: center;
+}
+
+.copy {
+    text-align: center;
+    margin: auto;
+    margin-top: 15px;
+}
+
+.main-footer [class*="icon-"] {
+    color: white;
+    text-decoration: none;
+}
+
+.main-footer [class*="icon-"]:before {
+    position: relative;
+    top: 3px;
+    right: 5px;
+}
+
+
+/*--------- Estilos Responsive --------*/
+
+@media screen and (min-width:480px) {
+    .logo {
+        background: none;
+        color: white;
+        text-align: left;
+    }
+    .main {
+        padding-bottom: 15px;
+    }
+    .main-header__contactInfo {
+        text-align: right;
+    }
+    .main-header__contactInfo__phone {
+        background: none;
+    }
+    .main-header__contactInfo__adress {
+        color: white;
+    }
+    .main-nav {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    .banner {
+        margin-top: -150px;
+        z-index: -1000;
+    }
+    .banner__content {
+        font-size: 2em;
+    }
+    .main-footer .container-flex {
+        align-items: flex-start;
+    }
+    .column--50 {
+        width: 49%;
+    }
+    .column--50--25 {
+        width: 49%;
+    }
+    .column--33 {
+        width: 32%;
+    }
+    .main__about__description .column:nth-child(2) {
+        padding-left: 20px;
+        font-size: .9em;
+    }
+    .main__about__description .btn {
+        margin: 0;
+    }
+    .column__title {
+        margin-bottom: 30px;
+    }
+    .product-special .column {
+        border: 5px solid #ddd;
+        padding: 5px;
+    }
+    .product-special__img {
+        height: 250px;
+        object-fit: cover;
+    }
+    .main-footer {
+        text-align: left;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .banner {
+        margin-top: -160px;
+        z-index: -1000;
+    }
+    .main__title {
+        font-size: 2.2em;
+    }
+    .main-txt {
+        font-size: 1.4em;
+    }
+    .main__about__description {
+        margin-top: 30px;
+    }
+    .main__about__description .column--50:nth-child(2) {
+        font-size: 1.1em;
+        line-height: 26px;
+    }
+    /* .main__about__description .column--50:nth-child(2) .column__txt {
+        line-height: 30px;
+    } */
+    .column--50--25 {
+        width: 24.5%;
+    }
+    .column__title {
+        font-size: 1.3rem;
+        font-weight: bold;
+    }
+    .column__txt {
+        font-size: 1.2em;
+    }
+    .group__title {
+        font-size: 2.2em;
+    }
+    .nuestros-productos__title {
+        font-weight: bold;
+    }
+    .nuestros-productos__price {
+        font-size: 1.8em;
+    }
+    .main-footer {
+        padding: 30px 0;
+        text-align: left;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .container {
+        width: 1200px;
+    }
+    .logo {
+        font-size: 2em;
+        padding: 0;
+    }
+    .main-header__contactInfo__phone,
+    .main-header__contactInfo__adress {
+        padding-right: 0;
+        font-size: 1.4em;
+    }
+    .main-nav {
+        padding: 0;
+    }
+    .banner__content {
+        font-size: 3.5em;
+    }
+    .icon-menu {
+        display: none;
+    }
+    .menu {
+        position: static;
+        display: flex;
+        width: auto;
+        height: auto;
+    }
+    .menu__link {
+        padding: 20px;
+    }
+    .group__color .container {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding: 20px;
+    }
+    .main__title {
+        font-size: 2.3em;
+    }
+    .main__about__description .column--50:nth-child(2) {
+        font-size: 1.3em;
+        line-height: 35px;
+    }
+    .main__about__description .column--50 .column__title {
+        font-size: 1.6em;
+    }
+    .nuestros-productos__title {
+        font-size: 1.4em;
+    }
+    .nuestros-productos__price {
+        font-size: 1.8em;
+    }
+    .main-footer {
+        padding: 30px 0;
+    }
+    .main-footer .column--33 .column__txt {
+        font-size: 1.5em;
+    }
+    .main-footer .copy {
+        font-size: 1.3em;
+        text-align: left;
+    }
+}
+
+@media screen and (min-width:1600px) {
+    .container {
+        width: 1450px;
+    }
+    .main-title {
+        font-size: 2.2em;
+    }
+    .main__about__description .column:nth-child(1) img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+    }
+    .nuestros-productos__img {
+        height: 300px;
+        object-fit: cover;
+    }
+    .main-footer .column--33 .colum__txt {
+        font-size: 1.8em;
+    }
+}
